@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(cors());
 connectDB();
 
-// app.get("/", (req, res) => {
-//   res.send("Welcome to the Spotify backend API!");
-// });
+app.get("/", (req, res) => {
+  res.send("Welcome to the Spotify backend API!");
+});
 
 app.use("/api", users);
 app.use("/api", songs);
