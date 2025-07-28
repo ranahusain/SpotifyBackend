@@ -26,14 +26,14 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-08-01",
 });
 
-const staticDir =
-  process.env.STATIC_DIR || path.join(__dirname, "../my-app/dist");
-app.use(express.static(staticDir));
+// const staticDir =
+//   process.env.STATIC_DIR || path.join(__dirname, "../my-app/dist");
+// app.use(express.static(staticDir));
 
-app.get("/", (req, res) => {
-  const filePath = path.resolve(staticDir, "index.html");
-  res.sendFile(filePath);
-});
+// app.get("/", (req, res) => {
+//   const filePath = path.resolve(staticDir, "index.html");
+//   res.sendFile(filePath);
+// });
 
 app.get("/config", (req, res) => {
   res.send({
